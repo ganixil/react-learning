@@ -1,7 +1,7 @@
 function Nav() {
     return (
         <nav>
-            <img src={require('./images/logo.png')} alt='logo'/>
+            <img src={require('../images/logo.png')} alt='logo'/>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>

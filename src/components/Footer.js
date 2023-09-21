@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <img src={require('./images/icon.jpg')} alt='icon'/>
+            <img src={require('../images/icon.jpg')} alt='icon'/>
             <div>
                 <h3>Doormat Navigation</h3>
                 <ul>
