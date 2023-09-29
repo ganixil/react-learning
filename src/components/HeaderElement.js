@@ -3,7 +3,7 @@ import "./styles/HeaderElement.css";
 import Logo from "../components/assets/logo.jpg"
 import Navigation from './Navigation';
 import { NavLink } from 'react-router-dom';
-import MobileNav from './MobileNav';
+import MobileNav from './MobileNav.js';
 
 const Navbar = () => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderElement from '../components/HeaderElement';
 import HeroSection from '../components/HeroSection';
-import Specials from '../components/Specials';
+import Specials from '../components/Specials.js';
 import Footer from '../components/Footer';
 
 const Home = () => {
