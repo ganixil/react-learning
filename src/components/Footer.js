@@ -1,41 +1,48 @@
-function Footer() {
-    return (
-        <footer>
-            <img src={require('../images/icon.jpg')} alt='icon'/>
-            <div>
-                <h3>Doormat Navigation</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#reservation">Reservation</a></li>
-                    <li><a href="#online">Order Online</a></li>
-                    <li><a href="#login">Login</a></li>
-                </ul>
+import React from 'react';
+import "../components/styles/Footer.css";
+import Logo from "../components/assets/logo.png";
+
+const Footer = () => {
+  return (
+    <div>
+        <div className="footer-background">
+            <div className="footer-container">
+                <img src={ Logo } alt="Little Lemon logo" />
+                <p>Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. The restaurant features a locally sourced menu with daily specials.</p>
+                <div className="footer-content">
+                    <div className="locations">
+                        <h5>LOCATIONS</h5>
+                        <ul>
+                            <li>Chicago</li>
+                            <li>Chicago</li>
+                            <li>Chicago</li>
+                            
+                        </ul>
+                    </div>
+                    <div className="opening-times">
+                        <h5>OPENING TIMES</h5>
+                        <ul>
+                            <li>Mon - Wed: 10:30AM - 12:00AM</li>
+                            <li>Fri: 12:00PM - 1:00AM</li>
+                            <li>Sat - Sun: 10:30AM - 12:00AM</li>
+                        </ul>
+                    </div>
+                    <div className="contact">
+                        <h5>CONTACT US</h5>
+                        <ul>
+                            <li>123 Fake Lane Chicago IL 11111</li>
+                            <li>Tel: 123 456 7890</li>
+                            <li>Email: info@littlelemon.com</li>
+                        </ul>
+                    </div>
             </div>
-            <div>
-                <h3>Contact</h3>
-                <p>1234 Fake Avenue, <br/>
-                    New York, NY
-                </p>
-                <p>
-                    (123)-456-7890
-                </p>
-                <p>
-                    info@littlelemon.com
-                </p>
+            <div className="copyright">
+                <p>© 2023 Little Lemon Ltd. All rights reserved.</p>
             </div>
-            <div>
-                <h3>Connect</h3>
-                <ul>
-                    <li><a href='www.facebooke.com'>Facebook</a></li>
-                    <li><a href='www.instagram.com'>Instagram</a></li>
-                    <li><a href='www.tiktok.com'>Tiktok</a></li>
-                </ul>
-                <p>Join Us</p>
-            </div>
-        </footer>
-    );
+        </div>
+        </div>
+    </div>
+  )
 }
-  
-export default Footer;
+
+export default Footer
