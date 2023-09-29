@@ -1,48 +1,76 @@
-import React from 'react';
-import "../components/styles/Footer.css";
-import Logo from "../components/assets/logo.png";
-
-const Footer = () => {
+import { Link } from "react-router-dom";
+export default function Footer() {
   return (
-    <div>
-        <div className="footer-background">
-            <div className="footer-container">
-                <img src={ Logo } alt="Little Lemon logo" />
-                <p>Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. The restaurant features a locally sourced menu with daily specials.</p>
-                <div className="footer-content">
-                    <div className="locations">
-                        <h5>LOCATIONS</h5>
-                        <ul>
-                            <li>Chicago</li>
-                            <li>Chicago</li>
-                            <li>Chicago</li>
-                            
-                        </ul>
-                    </div>
-                    <div className="opening-times">
-                        <h5>OPENING TIMES</h5>
-                        <ul>
-                            <li>Mon - Wed: 10:30AM - 12:00AM</li>
-                            <li>Fri: 12:00PM - 1:00AM</li>
-                            <li>Sat - Sun: 10:30AM - 12:00AM</li>
-                        </ul>
-                    </div>
-                    <div className="contact">
-                        <h5>CONTACT US</h5>
-                        <ul>
-                            <li>123 Fake Lane Chicago IL 11111</li>
-                            <li>Tel: 123 456 7890</li>
-                            <li>Email: info@littlelemon.com</li>
-                        </ul>
-                    </div>
-            </div>
-            <div className="copyright">
-                <p>© 2023 Little Lemon Ltd. All rights reserved.</p>
-            </div>
-        </div>
-        </div>
-    </div>
-  )
-}
+    <footer>
+      <menu>
+        <li className="img-footer">
+          <img
+            src={require("../assets/footer-logo.png")}
+            alt="Little Lemon logo"
+          ></img>
+        </li>
+        <li className="contact">
+          <h1 className="footer-header">Navigation</h1>
+          <ul className="footer-links">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <a
+              href={require("../assets/menu.webp")}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Menu
+            </a>
+            <Link to="/reservations">Reservations</Link>
+            <Link to="/order">Order</Link>
+            <Link to="/login">Login</Link>
+          </ul>
+        </li>
 
-export default Footer
+        <li>
+          <h1 className="footer-header">Contact</h1>
+          <ul className="footer-links">
+            <li>2395 Maldove Way,</li>
+            <li>Chicago Illinois</li>
+            <br></br>
+            <li>(629)-243-6827</li>
+            <br></br>
+            <a
+              href="mailto: info@littlelemon.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              info@littlelemon.com
+            </a>
+          </ul>
+        </li>
+        <li>
+          <h1 className="footer-header">Connect</h1>
+          <ul className="footer-links">
+            <a
+              href="https://www.facebook.com/thelittlelemonshop/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/littlelemonmoon/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=3Li-FfypZYE"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Join us!
+            </a>
+          </ul>
+        </li>
+      </menu>
+    </footer>
+  );
+}
