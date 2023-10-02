@@ -4,39 +4,65 @@ export default function Navigation(props) {
   return (
     <menu className={`navbar-menu ${props.device}`}>
       {props.device === "mobile" ? (
-        ""
+        <div className="mobileNav">
+          <Link className="hover-effect" to="/">
+            <h2>Home</h2>
+          </Link>
+          <Link className="hover-effect" to="/about">
+            <h2>About</h2>
+          </Link>
+            <a
+              className="hover-effect"
+              href={require("../assets/menu.webp")}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h2>Menu</h2>
+            </a>
+          <Link className="hover-effect" to="/reservations">
+            <h2>Reservations</h2>
+          </Link>
+          <Link className="hover-effect" to="/order">
+            <h2>Order</h2>
+          </Link>
+          <Link className="hover-effect" to="/login">
+            <h2>Login</h2>
+          </Link>
+        </div>
       ) : (
-        <Link to="/">
-          <img
-            src={require("../assets/nav-logo.png")}
-            alt="Little Lemon logo"
-            className="nav-image"
-          ></img>
-        </Link>
-      )}
-      <Link className="hover-effect" to="/">
-        <h1>Home</h1>
-      </Link>
-      <Link className="hover-effect" to="/about">
-        <h1>About</h1>
-      </Link>
-      <a
-        className="hover-effect"
-        href={require("../assets/menu.webp")}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <h1>Menu</h1>
-      </a>
-      <Link className="hover-effect" to="/reservations">
-        <h1>Reservations</h1>
-      </Link>
-      <Link className="hover-effect" to="/order">
-        <h1>Order</h1>
-      </Link>
-      <Link className="hover-effect" to="/login">
-        <h1>Login</h1>
-      </Link>
+        <div className="desktopNav">
+          <Link to="/">
+            <img
+              src={require("../assets/nav-logo.png")}
+              alt="Little Lemon logo"
+              className="nav-image"
+            ></img>
+          </Link>
+          <Link className="hover-effect" to="/">
+            <h2>Home</h2>
+          </Link>
+          <Link className="hover-effect" to="/about">
+            <h2>About</h2>
+          </Link>
+            <a
+              className="hover-effect"
+              href={require("../assets/menu.webp")}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h2>Menu</h2>
+            </a>
+          <Link className="hover-effect" to="/reservations">
+            <h2>Reservations</h2>
+          </Link>
+          <Link className="hover-effect" to="/order">
+            <h2>Order</h2>
+          </Link>
+          <Link className="hover-effect" to="/login">
+            <h2>Login</h2>
+          </Link>
+        </div>
+      )}      
     </menu>
   );
 }

@@ -3,6 +3,7 @@ import GreekSalad from '../../../assets/food/greek-salad.webp';
 import Bruschetta from '../../../assets/food/bruschetta.jpeg';
 import LemonDessert from '../../../assets/food/lemon-dessert.webp';
 import SpecialCard from './CardInfo/SpecialCard';
+import '../../styles/Specials.css'
 
 export default function Specials() {
     return (

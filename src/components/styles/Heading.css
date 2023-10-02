@@ -1,0 +1,51 @@
+.call-to-action {
+    background-color: #495e57;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1.25rem 5rem 1.2rem 5rem;
+}
+
+.hero-text > h1 {
+    font-size: 3rem;
+    margin-top: 0rem;
+    margin-bottom: -3rem;
+}
+
+.hero-text > h2 {
+    font-size: 2.5rem;
+}
+
+.hero-image {
+    max-height: 17rem;
+    padding-left: 2rem;
+}
+
+.hero-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media only screen and (min-width: 601px){
+    .hero-image{
+        display: block;
+    }
+
+    
+
+}
+
+@media only screen and (max-width: 600px){
+    .hero-image{
+        display: none;
+    }
+    .call-to-action {
+        background-image: url("../../assets/food/food1.png");
+    }
+    .call-to-action h1,h2,p{
+        text-shadow: 0 0 5px #c96100, 0 0 5px #000000;
+    }
+
+}

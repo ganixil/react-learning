@@ -1,9 +1,10 @@
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
+import "../../styles/Heading.css"
 export default function Heading() {
     return (
         <header>
             <article className="call-to-action">
-                <section className="hero-text">
+                <section>
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <p className="subsection">We are a family owned Mediterranean restaurant, located on  Maldove Street in Chicago, Illionis. We focus
