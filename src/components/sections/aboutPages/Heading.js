@@ -1,6 +1,8 @@
 import HeroImage from "../../../assets/food/food4.webp";
+import About from '../headingPages/About'
 export default function Heading() {
   return (
+    <>
     <header className="reserve-table">
       <img
         className="header-reserve"
@@ -10,6 +12,9 @@ export default function Heading() {
       <div className="reserve-header-text">
         <h1>About us</h1>
       </div>
+      
     </header>
+    <About/>
+    </>
   );
 }

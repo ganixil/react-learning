@@ -44,7 +44,7 @@
     .call-to-action {
         background-image: url("../../assets/food/food1.png");
     }
-    .call-to-action h1,h2,p{
+    .call-to-action .title,.subtitle, .subsection{
         text-shadow: 0 0 5px #c96100, 0 0 5px #000000;
     }
 

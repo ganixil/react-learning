@@ -1,4 +1,3 @@
-import Carousel from './SpecialsCarousel';
 import GreekSalad from '../../../assets/food/greek-salad.webp';
 import Bruschetta from '../../../assets/food/bruschetta.jpeg';
 import LemonDessert from '../../../assets/food/lemon-dessert.webp';
@@ -21,10 +20,7 @@ export default function Specials() {
                 <SpecialCard image={LemonDessert} name="Lemon Dessert" price="$8.50" description="Fresh baked lemon bread coated in salt and sugar. Powdered in citrus
                  and lemon zest."/>
             </section>
-
-            <section className="specials-carousel">
-                <Carousel />
-            </section>
         </section>
     );
+    
 }

@@ -1,0 +1,85 @@
+.reserve-table {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: -1.4rem;
+}
+
+.header-reserve {
+    width: 100vw;
+    /* width of container */
+    height: 20rem;
+    /* height of container */
+    object-fit: cover;
+}
+
+.reserve-header-text {
+    background-color: #495e57;
+    padding: 0 3rem 0 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    border-radius: 0.5rem;
+}
+
+.reservation-form {
+    padding: 2rem 0 0.5rem 0;
+    text-align: center;
+}
+
+.reservation-form>div {
+    margin-bottom: 1.5rem;
+}
+
+.submission-section{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.action-button{
+    margin-top:20px;
+    margin-left:1.5vw;
+    margin-right:1.5vw;
+}
+
+.confirmation-header {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: -1.4rem;
+    min-height: 70vh;
+}
+
+.confirmation-image {
+    height: 70vh;
+    /* height of container */
+    width: 100%;
+    object-fit: cover;
+}
+
+.redirect-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12vw;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.redirect-button {
+    background-color: #464646;
+    color: white !important;
+    padding: 2vh 2rem 2vh 2rem;
+    border-radius: 0.5rem;
+    min-width: 12vw;
+    font-family: "Karla";
+    font-size: 18px;
+}
+
+.redirect-button:hover {
+    background-color: #f4ce14;
+    color: #464646 !important;
+    transition: 0.2s;
+}

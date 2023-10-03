@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import './Reservation.css'
 export default function ReservationForm(props) {
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
@@ -156,9 +157,9 @@ export default function ReservationForm(props) {
         ></textarea>
       </div>
 
-      <div>
+      <div className="submission-section">
         <br></br>
-        <small>
+        <small className="notice">
           <p>
             Note: You cannot edit your reservation after submission. Please
             double-check your answer before submitting your reservation request.

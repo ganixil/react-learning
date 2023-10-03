@@ -1,3 +1,4 @@
+import '../../styles/About.css'
 export default function About() {
     return (
         <article className="about-us">

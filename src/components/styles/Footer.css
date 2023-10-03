@@ -1,0 +1,57 @@
+/* FOOTER STYLING */
+footer {
+    min-height: 13rem;
+    background-color: #495e57;
+    color: #ffffff;
+    padding-bottom: 1rem;
+    margin-top: -1.4rem;
+  }
+  
+  footer > menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .footer-header {
+    margin-bottom: -1.25rem;
+  }
+  
+  .footer-links {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footer-links > a,
+  .footer-links > Link,
+  .footer-links > li {
+    text-align: left;
+    display: block;
+    color: white;
+    padding-top: 0.2rem;
+    font-family: "Karla", "Sans Serif";
+  }
+  
+  .footer-links > a:hover,
+  .footer-links > Link:hover {
+    background-color: #495e57;
+    text-decoration: underline;
+  }
+  
+  .img-footer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .img-footer > img {
+    max-height: 8rem;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-right: 3rem;
+  
+    background-color: white;
+    padding: 0.5rem;
+  }
+  

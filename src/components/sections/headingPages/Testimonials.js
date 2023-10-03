@@ -1,4 +1,3 @@
-import Carousel from './TestimonialCarousel'
 import TestimonialCard from './CardInfo/TestimonialCard';
 export default function Testimonials() {
     return (
@@ -24,10 +23,6 @@ export default function Testimonials() {
                  out at least once if they live in Chicago."/>
                 <TestimonialCard name="Jack Hu" description="This restaurant served as a perfect dinner for me after a 
                 long night of studying. I would definitely order from here again!"/>
-            </section>
-
-            <section className="testimonials-carousel">
-                <Carousel />
             </section>
         </section>
     );

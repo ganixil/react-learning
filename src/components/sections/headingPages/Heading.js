@@ -5,8 +5,8 @@ export default function Heading() {
         <header>
             <article className="call-to-action">
                 <section>
-                    <h1>Little Lemon</h1>
-                    <h2>Chicago</h2>
+                    <h1 className='title'>Little Lemon</h1>
+                    <h2 className='subtitle'>Chicago</h2>
                     <p className="subsection">We are a family owned Mediterranean restaurant, located on  Maldove Street in Chicago, Illionis. We focus
                     on traditional recipes served with a modern twist.</p>
                     <br></br>
