@@ -13,20 +13,10 @@
     object-fit: cover;
 }
 
-.reserve-header-text {
-    background-color: #495e57;
-    padding: 0 3rem 0 3rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 25px;
-    border-radius: 0.5rem;
-}
-
 .reservation-form {
     padding: 2rem 0 0.5rem 0;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .reservation-form>div {
@@ -82,4 +72,14 @@
     background-color: #f4ce14;
     color: #464646 !important;
     transition: 0.2s;
+}
+
+.redirect-button-disabled{
+    background-color: #464646;
+    color: white !important;
+    padding: 2vh 2rem 2vh 2rem;
+    border-radius: 0.5rem;
+    min-width: 12vw;
+    font-family: "Karla";
+    font-size: 18px;
 }

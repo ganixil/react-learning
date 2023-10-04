@@ -1,174 +1,172 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import './Reservation.css'
 export default function ReservationForm(props) {
-  const [fName, setFName] = useState("");
-  const [lName, setLName] = useState("");
-  const [email, setEmail] = useState("");
-  const [tel, setTel] = useState("");
-  const [people, setPeople] = useState(1);
-  const [date, setDate] = useState("");
-  const [occasion, setOccasion] = useState("");
-  const [preferences, setPreferences] = useState("");
-  const [comments, setComments] = useState("");
-
-  const [finalTime, setFinalTime] = useState(
-    props.availableTimes.map((times) => <option>{times}</option>)
-  );
-
-  function handleDateChange(e) {
-    setDate(e.target.value);
-
-    var stringify = e.target.value;
-    const date = new Date(stringify);
-
-    props.updateTimes(date);
-
-    setFinalTime(props.availableTimes.map((times) => <option>{times}</option>));
+  const navigate = useNavigate();
+  const initialValues = {
+    firstName: "",
+    lastName:"",
+    email: "",
+    phoneNumber: "",
+    people:"",
+    date:"",
+    occasion:"",
+    preferences:""
   }
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    navigate('/confirmation')
+  } 
+
+  const ReservationSchema = Yup.object().shape({
+    firstName: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Firstname is required"),
+
+    lastName: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Lastname is required"),
+
+    phoneNumber: Yup.string()
+      .required("Phone number is required")
+      .matches(
+        /^[1-9]{3}[0-9]{3}[0-9]{4}$/g,
+        "Invalid phone number"
+      ),
+
+    email: Yup.string().email().required("Email is required"),
+
+    date: Yup.date().required("Date is required")
+
+  });
 
   return (
-    <form className="reservation-form">
-      <div>
-        <label htmlFor="fName">First Name</label> <br></br>
-        <input
-          type="text"
-          id="fName"
-          placeholder="First Name"
-          required
-          minLength={2}
-          maxLength={50}
-          value={fName}
-          onChange={(e) => setFName(e.target.value)}
-        ></input>
-      </div>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={ReservationSchema}
+    >
+      {(formik) => {
+        const { errors, touched, isValid, dirty } = formik;
+        return (
+          <div className="container">
+            <Form className="reservation-form" onSubmit={handleSubmit}>
+              <div div className="form-row">
+                <label htmlFor="firstName">First Name</label><br></br>
+                <Field
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  className={errors.firstName && touched.firstName ?
+                    "input-error" : null}
+                /><br></br>
+                <ErrorMessage name="firstName" component="span" className="error" />
+              </div>
+              <div div className="form-row">
+                <label htmlFor="lastName">Last Name</label><br></br>
+                <Field
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  className={errors.lastName && touched.lastName ?
+                    "input-error" : null}
+                /><br></br>
+                <ErrorMessage name="lastName" component="span" className="error" />
+              </div>
+              <div className="form-row">
+                <label htmlFor="email">Email</label><br></br>
+                <Field
+                  type="email"
+                  name="email"
+                  id="email"
+                  className={errors.email && touched.email ?
+                    "input-error" : null}
+                /><br></br>
+                <ErrorMessage name="email" component="span" className="error" />
+              </div>
 
-      <div>
-        <label htmlFor="lName">Last Name</label> <br></br>
-        <input
-          type="text"
-          id="lName"
-          placeholder="Last Name"
-          minLength={2}
-          maxLength={50}
-          value={lName}
-          onChange={(e) => setLName(e.target.value)}
-        ></input>
-      </div>
+              <div className="form-row">
+                <label htmlFor="phone">Phone</label><br></br>
+                <Field
+                  type="text"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  className={errors.phoneNumber && touched.phoneNumber ?
+                    "input-error" : null}
+                /><br></br>
+                <ErrorMessage
+                  name="phoneNumber"
+                  component="span"
+                  className="error"
+                />
+              </div>
+              <div>
+                <label htmlFor="people">Number of People</label> <br></br>
+                <Field
+                  type="number"
+                  name="people"
+                  id="people"
+                  className="people"
+                  min={1}
+                  max={50}
+                />
+              </div>
+              <div>
+                <label htmlFor="date">Date</label> <br></br>
+                <Field
+                  type="date"
+                  name="date"
+                  id="date"
+                  className={errors.date && touched.date ?
+                    "input-error" : null}
+                /><br></br>
+                <ErrorMessage
+                  name="date"
+                  component="span"
+                  className="error"
+                />
+              </div>
 
-      <div>
-        <label htmlFor="email">Email</label> <br></br>
-        <input
-          type="email"
-          id="email"
-          placeholder="Email"
-          value={email}
-          required
-          minLength={4}
-          maxLength={200}
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
-      </div>
+              <div>
+                <label htmlFor="occasion">Occasion</label> <br></br>
+                <select
+                  id="occasion"
+                >
+                  <option>None</option>
+                  <option>Birthday</option>
+                  <option>Anniversary</option>
+                  <option>Engagement</option>
+                  <option>Other</option>
+                </select>
+              </div>
 
-      <div>
-        <label htmlFor="phonenum">Phone Number</label> <br></br>
-        <input
-          type="tel"
-          id="phonenum"
-          placeholder="(xxx)-xxx-xxxx"
-          value={tel}
-          required
-          minLength={10}
-          maxLength={25}
-          onChange={(e) => setTel(e.target.value)}
-        ></input>
-      </div>
-
-      <div>
-        <label htmlFor="people">Number of People</label> <br></br>
-        <input
-          type="number"
-          id="people"
-          placeholder="Number of People"
-          value={people}
-          required
-          min={1}
-          max={100}
-          onChange={(e) => setPeople(e.target.value)}
-        ></input>
-      </div>
-
-      <div>
-        <label htmlFor="date">Select Date</label> <br></br>
-        <input
-          type="date"
-          id="date"
-          required
-          value={date}
-          onChange={handleDateChange}
-        ></input>
-      </div>
-
-      <div>
-        <label htmlFor="time">Select Time</label> <br></br>
-        <select id="time" required>
-          {finalTime}
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="occasion">Occasion</label> <br></br>
-        <select
-          id="occasion"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
-        >
-          <option>None</option>
-          <option>Birthday</option>
-          <option>Anniversary</option>
-          <option>Engagement</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="preferences">Seating preferences</label> <br></br>
-        <select
-          id="preferences"
-          value={preferences}
-          onChange={(e) => setPreferences(e.target.value)}
-        >
-          <option>None</option>
-          <option>Indoors</option>
-          <option>Outdoor (Patio)</option>
-          <option>Outdoor (Sidewalk)</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="comments">Additional Comments</label> <br></br>
-        <textarea
-          id="comments"
-          rows={8}
-          cols={50}
-          placeholder="Additional Comments"
-          value={comments}
-          onChange={(e) => setComments(e.target.value)}
-        ></textarea>
-      </div>
-
-      <div className="submission-section">
-        <br></br>
-        <small className="notice">
-          <p>
-            Note: You cannot edit your reservation after submission. Please
-            double-check your answer before submitting your reservation request.
-          </p>
-        </small>
-        <Link className="action-button" to="/confirmation">
-          Book Table
-        </Link>
-      </div>
-    </form>
+              <div>
+                <label htmlFor="preferences">Seating preferences</label> <br></br>
+                <select
+                  id="preferences"
+                >
+                  <option>None</option>
+                  <option>Indoors</option>
+                  <option>Outdoor (Patio)</option>
+                  <option>Outdoor (Sidewalk)</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                className={!(dirty && isValid) ? "redirect-button-disabled" : "redirect-button"}
+                disabled={!(dirty && isValid)}
+              >
+                Reserve a Table
+              </button>
+            </Form>
+          </div>
+        );
+      }}
+    </Formik>
+  
   );
 }
